@@ -1,13 +1,21 @@
 {% extends 'base.html'%}
 
 {% block content %}
-    <div class="container landing">
+<style>
+    body{
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%), url('https://images.pexels.com/photos/747964/pexels-photo-747964.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    }
+</style>
+    <div class="container landing bg-white text-dark">
         <div class="row ">
                 {% if current_user.is_authenticated %}
                 <div class="col-md-3 "><a class="btn btn-sm btn-info " id="ref" href="{{url_for('main.new_blog')}}">Post</a></div>
                 {% endif %}
             
-            <div class="col-md-9 "><h1 >Welcome to D-Blog</h1></div>
+            <div class="col-md-9 "><h1 >Welcome to The Creek</h1></div>
         </div>
 
         <div class="row">
@@ -49,10 +57,10 @@
             <div class="col-md-4">
                 <div class="container">
                     <div class="card cardquote">
-                        <div class="card-title">
+                        <div class="card-header">
                             <h4>A quote by: <span style="color: rgb(3, 3, 3)">{{quote.author}}</span> </h4>
                         </div>
-                        <p class="card-text">{{quote.quote}}</p>
+                        <p class="card-body">{{quote.quote}}</p>
                     </div>
                 </div>
                 <div class="container-fluid">
