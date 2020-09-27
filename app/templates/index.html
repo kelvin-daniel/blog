@@ -9,13 +9,13 @@
     background-repeat: no-repeat;
     }
 </style>
-    <div class="container landing bg-white text-dark">
+    <div class="container landing">
         <div class="row ">
                 {% if current_user.is_authenticated %}
                 <div class="col-md-3 "><a class="btn btn-sm btn-info " id="ref" href="{{url_for('main.new_blog')}}">Post</a></div>
                 {% endif %}
             
-            <div class="col-md-9 "><h1 >Welcome to The Creek</h1></div>
+            <div class="col-md-8 bg-white text-dark p-5"><h1 >The Creek</h1></div>
         </div>
 
         <div class="row">
