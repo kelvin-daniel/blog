@@ -199,6 +199,9 @@ section {
 a{
     color: #000;
 }
+html,body{
+    height: 100vh;
+}
 .reg{
     padding: 20px;
 }
