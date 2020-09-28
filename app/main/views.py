@@ -31,6 +31,7 @@ def save_picture(form_picture):
 @main.route('/profile',methods = ['POST','GET'])
 @login_required
 def profile():
+    quotes = get_quotes()
     form = UpdateProfile()
     if form.validate_on_submit():
         if form.profile_picture.data:
@@ -47,7 +48,7 @@ def profile():
         form.email.data = current_user.email
         form.bio.data = current_user.bio
     profile_pic_path = url_for('static',filename = 'photos/'+ current_user.profile_pic_path) 
-    return render_template('profile/profile.html', profile_pic_path=profile_pic_path, form = form)
+    return render_template('profile/profile.html', profile_pic_path=profile_pic_path, form = form, quote = quotes)
 
 @main.route('/user/<name>/updateprofile', methods = ['POST','GET'])
 @login_required
