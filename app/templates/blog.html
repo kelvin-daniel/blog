@@ -8,18 +8,17 @@
             <div class="col-md-12 singleblog">
                 <hr>
                 <div class="row">
-                    <div class="col-md-1">
-                        <img class="rounded-circle blog-img" src="{{ url_for('static', filename='photos/' + blog.user.profile_pic_path) }}">
-                    </div>
-                    <div class="col-md-8">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-8 p-5 card-1">
                         {% for message in get_flashed_messages() %}
                         <div class="alert alert-success">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
                         {{ message }}
                         </div>
                         {% endfor %}
-                        <p>By <span style="color: blue">{{blog.user.username}}</span>  on {{blog.posted.strftime('%d-%m-%Y')}}<span style="float: right;font-size:18px;margin-right:20px">{{blog.comment.count()}} Comments</span></p>
+                        <p><span style="color: blue">:::: {{blog.user.username}}</span> | {{blog.posted.strftime('%d-%m-%Y')}}</p>
                         <h3 class="mt-4 p-2">Title : {{blog.title|title}}</h3>
+                        <hr>
                         <p>{{blog.content}}</p>
                         <div>
                         <a class="btn btn-info btn-sm m-1 card-1" data-toggle="modal" data-target="#modalComment">Comment</a>
@@ -29,7 +28,7 @@
                         {% endif %}
                         </div>
                     </div>
-                    <div class="col-md-3 card-1 shadow p-3">
+                    <div class="col-md-3 card-1 shadow bg-dark text-white">
                         <h4 class="m-3 text-center">Comments</h4>
                         <hr>
                         {% for comment in comments %}
