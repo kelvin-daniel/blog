@@ -24,5 +24,5 @@ class UpdateProfile(FlaskForm):
 
 class CreateBlog(FlaskForm):
     title = StringField('Title',validators=[Required()])
-    content = TextAreaField('Blog Content',validators=[Required()])
+    content = TextAreaField('Content Goes Here',validators=[Required()])
     submit = SubmitField('Post')

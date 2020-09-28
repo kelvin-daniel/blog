@@ -32,7 +32,7 @@
     {% if current_user.bio %}
       <p> {{current_user.bio}}</p>
     {%else%}
-      <h3> {{current_user.username| capitalize}} has no bio </h3>
+      <h3> {{current_user.username| capitalize}} You have not added your bio. </h3>
     {% endif %}
     {% if current_user == current_user %}
     <a class="btn btn-danger btn-sm" href="{{url_for('main.updateprofile',name=current_user.username)}}">Edit profile</a>
@@ -44,6 +44,7 @@
           <span>~{{quote.author}}</span>
       </p>
       <p class="card-body">{{quote.quote}}</p>
+      <p class="card-footer bounceInLeft">Hope you are having a blast</p>
   </div>
   </div>
 </div>
