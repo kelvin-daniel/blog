@@ -14,7 +14,7 @@
 <!-- displaying  Username-->
   <div class="col-md-8 card-1 bg-white p-5">
     {% if current_user.profile_pic_path %}
-    <img src="{{url_for('static',filename=current_user.profile_pic_path)}}" alt="" class="img-circle card-1" style="height: 250px; width: 40%;">
+    <img src="{{url_for('static',filename=current_user.profile_pic_path)}}" alt="" class="img-circle card-1 mb-2" style="height: 250px; width: 40%;">
     {%else%}
     <p>No profile picture</p>
     {% endif %}
@@ -35,7 +35,7 @@
       <h3> {{current_user.username| capitalize}} You have not added your bio. </h3>
     {% endif %}
     {% if current_user == current_user %}
-    <a class="btn btn-danger btn-sm" href="{{url_for('main.updateprofile',name=current_user.username)}}">Edit profile</a>
+    <a class="btn btn-info btn-sm" href="{{url_for('main.updateprofile',name=current_user.username)}}">Edit profile</a>
     {% endif %}
   </div>
   <div class="col-md-4 bg-dark text-white p-3">
