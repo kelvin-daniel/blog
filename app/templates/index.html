@@ -18,18 +18,18 @@
         </div>
 
         <div class="row">
-            <div class="col-md-8 ">
+            <div class="col-md-12 ">
                 {% for blog in blogs.items %}
                     <div class="container bg mb-2">
                         <hr>
                         <div class="row">
-                            <div class="col p-5 d-justify userblog mr-5">
+                            <div class="col pl-5 d-justify userblog mr-5">
                                 <p id="usern"><a href="{{url_for('main.user_posts',username = blog.user.username)}}"><span  style="color: rgb(97, 146, 236)"><i class="far fa-user-circle fa-2x"></i><strong>&nbsp;&nbsp; :::: {{blog.user.username | title}}</strong></span> </a> </p> 
                                 <p>Posted on : {{blog.posted.strftime('%d-%m-%Y')}}<span style="float: right;font-size:12px;margin-right:20px">{{blog.comment.count()}} Comments</span></p>
                                 <h4><a href="{{url_for('main.blog',id = blog.id)}}">{{blog.title | title}}</a></h4>
                                 <hr>
-                                <p>{{blog.content}}</p>
-                                <p> <a class="btn btn-sm btn-info" href="{{url_for('main.blog',id = blog.id)}}" > Comment</a> {{blog.comment.count()}} Comments</p>
+                                <p>{{blog.content | truncate(300)}}</p>
+                                <p> <a class="btn btn-sm btn-info" href="{{url_for('main.blog',id = blog.id)}}" > Read More</a></p>
                             </div>
                         </div> 
                         <hr>
