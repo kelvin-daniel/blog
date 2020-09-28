@@ -22,7 +22,7 @@
                         <h3>Title : {{blog.title}} <span style="float: right;font-size:18px;margin-right:20px">{{blog.comment.count()}} Comments</span></h3>
                         <p>{{blog.content}}</p>
                         <div>
-                        <a class="btn btn-success btn-sm m-1" data-toggle="modal" data-target="#modalComment">Comment</a>
+                        <a class="btn btn-info btn-sm m-1" data-toggle="modal" data-target="#modalComment">Comment</a>
                         {% if blog.user == current_user %}
                             <a class="btn btn-info btn-sm m-1" href="{{url_for('main.updateblog',blog_id = blog.id)}}">Edit Blog</a>
                             <button class="btn btn-sm btn-danger m-1" data-toggle="modal" data-target="#modalConfirmDelete" type="submit">Delete </button>
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 ">
-                        <h4>All Comments</h4>
+                        <h4 class="m-3 text-center">Comments</h4>
                         {% for comment in comments %}
                             <p class="mt-10"><span style="font-weight: bold">{{comment.user.username}} : </span> {{comment.comment}}</p>
                         {% endfor %}

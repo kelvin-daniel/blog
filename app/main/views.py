@@ -1,8 +1,8 @@
 from flask import render_template,redirect,url_for,abort,request,flash
 from app.main import main
-from app.models import User,Blog,Comment,Subscriber
+from app.models import User,Blog,Comment,Subscriber,PhotoProfile
 from .forms import UpdateProfile,CreateBlog
-from .. import db
+from .. import db,photos
 from app.request import get_quotes
 from flask_login import login_required,current_user
 from ..email import mail_message
@@ -60,7 +60,7 @@ def updateprofile(name):
         user.bio = form.bio.data
         user.save()
         return redirect(url_for('.profile',name = name))
-    return render_template('profile/updateprofile.html',form =form)
+    return render_template('profile/update.html',form =form)
 
 
 @main.route('/new_post', methods=['POST','GET'])
@@ -104,7 +104,16 @@ def updateblog(blog_id):
         form.content.data = blog.content
     return render_template('newblog.html', form = form)
 
-
+@main.route('/user/<name>/update/pic',methods= ['POST'])
+@login_required
+def update_pic(name):
+    user = User.query.filter_by(username = name).first()
+    if 'photo' in request.files:
+        filename = photos.save(request.files['photo'])
+        path = f'photos/{filename}'
+        user.profile_pic_path = path
+        db.session.commit()
+    return redirect(url_for('main.profile',name=name))
 
 @main.route('/comment/<blog_id>', methods = ['Post','GET'])
 @login_required
