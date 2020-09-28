@@ -14,7 +14,7 @@
 <!-- displaying  Username-->
   <div class="col-md-8 card-1 bg-white p-5">
     {% if current_user.profile_pic_path %}
-    <img src="{{url_for('static',filename=current_user.profile_pic_path)}}" alt="" class="img-circle" style="height: 200px; width: 40%;">
+    <img src="{{url_for('static',filename=current_user.profile_pic_path)}}" alt="" class="img-circle card-1" style="height: 250px; width: 40%;">
     {%else%}
     <p>No profile picture</p>
     {% endif %}
@@ -40,9 +40,9 @@
   </div>
   <div class="col-md-4 bg-dark text-white p-3">
     <div class="card bg-white text-dark">
-      <p class="card-header">
+      <h4 class="card-header">
           <span>~{{quote.author}}</span>
-      </p>
+      </h4>
       <p class="card-body">{{quote.quote}}</p>
       <p class="card-footer bounceInLeft">Hope you are having a blast</p>
   </div>
