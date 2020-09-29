@@ -6,7 +6,7 @@
 A python-flask application that allows writers to post blogs, edit and delete blogs. It also allows users who have signed up to comment on the blogs that has been posted by a writer. It also allows a person to subscribed to receive email every time a new blog is posted by a writer.
 
 ## Live Link
-[View Site](https://????????????.herokuapp.com)
+[View Site](https://thecrik.herokuapp.com/)
 
 ## Features
 - A user can view the most recent posts.
