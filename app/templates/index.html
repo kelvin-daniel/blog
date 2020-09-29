@@ -10,10 +10,10 @@
     }
 </style>
     <div class="container landing">
-        <div class="shead row bg-white text-dark p-3 mb-3">
-            <div class="col-md-10"><h1 >The Creek</h1></div>
+        <div class="shead row bg-dark text-white p-3 mb-3">
+            <div class="col-md-10 animated bounce"><h1 >The Creek</h1></div>
             {% if current_user.is_authenticated %}
-                <div class="col-2 float-right"><a class="btn btn-sm btn-primary " id="ref" href="{{url_for('main.new_blog')}}">Post</a></div>
+                <div><p>Hi {{current_user.username}}&nbsp; <i class="far fa-grin-beam"></i></p></div>
             {% endif %}
         </div>
 
@@ -65,7 +65,7 @@
     </div>
 
 
-    <footer class="footer-distributed footer mt-5 p-2 navbar-fixed-bottom">
+    <footer class="footer-distributed footer mt-5 p-2 navbar-fixed-bottom bg-dark text-white">
 
         <div class="footer-left">
 
@@ -81,7 +81,7 @@
                 </div>
             </form>
 
-            <p class="footer-company-name">The Creek © 2020</p>
+            <p class="footer-company-name text-white">The Creek © 2020</p>
         </div>
         <div class="footer-center">
             <div>

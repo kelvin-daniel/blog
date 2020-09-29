@@ -1,11 +1,11 @@
 {% extends 'base.html'%}
 
 {% block content %}
-    <div class="container ">
-        <h1 class="text-center"> A Blog by {{blog.user.username}}</h1>
+    <div class="container bg-dark text-white">
         <div class="row">
             
             <div class="col-md-12 singleblog">
+            <h3 class="text-center font-weight-bold p-2 animated fadeInLeftBig">Title : {{blog.title|title}}</h3>
                 <hr>
                 <div class="row">
                     <div class="col-md-1"></div>
@@ -17,7 +17,6 @@
                         </div>
                         {% endfor %}
                         <p><span style="color: blue">:::: {{blog.user.username}}</span> | {{blog.posted.strftime('%d-%m-%Y')}}</p>
-                        <h3 class="mt-4 p-2">Title : {{blog.title|title}}</h3>
                         <hr>
                         <p>{{blog.content}}</p>
                         <div>
@@ -52,7 +51,7 @@
               <div class="modal-body">
                 <i class="fas fa-trash-alt animated flash fa-4x"></i>
               </div>
-              <div class="modal-footer flex-center">
+              <div class="modal-footer flex-center bg-dark">
                 <form action="{{url_for('main.delete_post',blog_id = blog.id)}}" method="POST">
                     <input  type="submit" class="btn  btn-primary btn-sm" value="Yes">
                 </form>
@@ -75,7 +74,7 @@
                     <label></label>
                     <textarea class="form-control" placeholder="Type A comment..." rows="2" name ="newcomment" required></textarea>
                 </div>
-                <div class="modal-footer flex-center">
+                <div class="modal-footer flex-center bg-dark">
                     <button class="btn btn-sm btn-info card-1">Comment</button>&nbsp;&nbsp;
                     <a type="button" class="btn btn-danger btn-sm card-1" data-dismiss="modal">Exit</a>
                 </div>

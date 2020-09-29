@@ -9,10 +9,10 @@
   background-repeat: no-repeat;
   }
 </style>
-<div class="container text-dark mt-5">
+<div class="container mt-5">
 <div class="row">
 <!-- displaying  Username-->
-  <div class="col-md-8 card-1 bg-white p-5">
+  <div class="col-md-8 card-1 bg-dark text-white p-5">
     {% if current_user.profile_pic_path %}
     <img src="{{url_for('static',filename=current_user.profile_pic_path)}}" alt="" class="img-circle card-1 mb-2" style="height: 250px; width: 40%;">
     {%else%}
@@ -38,8 +38,8 @@
     <a class="btn btn-info btn-sm" href="{{url_for('main.updateprofile',name=current_user.username)}}">Edit profile</a>
     {% endif %}
   </div>
-  <div class="col-md-4 bg-dark text-white p-3">
-    <div class="card bg-white text-dark">
+  <div class="col-md-4 bg-dark text-white card-1 p-3">
+    <div class="card bg-dark text-white">
       <h4 class="card-header">
           <span>~{{quote.author}}</span>
       </h4>
