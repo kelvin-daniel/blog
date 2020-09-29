@@ -23,9 +23,7 @@ def signup():
         user = User(username=form.username.data, email = form.email.data, password=form.password.data)
         user.save()
         flash('Your account has been created! You are now able to login','success')
-        msg = Message(subject="The Creek", sender="testingemailpk6@gmail.com", recipients=[user.email])
-        msg.body = f"Hello "+ user.username.capitalize()+", Welcome to the creek, We have just seen you have signed up for our application and want to welcome you to the family. Please enjoy."
-        mail.send(msg)
+        
         return  redirect(url_for('auth.login'))
     return render_template('auth/signup.html',registration_form=form )
 
