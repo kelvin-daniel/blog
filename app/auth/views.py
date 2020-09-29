@@ -23,7 +23,6 @@ def signup():
         user = User(username=form.username.data, email = form.email.data, password=form.password.data)
         user.save()
         flash('Your account has been created! You are now able to login','success')
-        
         return  redirect(url_for('auth.login'))
     return render_template('auth/signup.html',registration_form=form )
 

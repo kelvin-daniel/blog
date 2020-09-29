@@ -8,12 +8,11 @@
 
                 <h2 class="shead text-center p-4 bg-dark text-white mb-3">The Creek</h2>
                 {% for message in get_flashed_messages() %}
-                <div class="alert alert-sucess">
+                <div class="alert card-1">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 {{ message }}
                 </div>
                 {% endfor %}
-
                 {{ wtf.quick_form(form) }}
             </div>
             <div class="col-md-3"></div>
